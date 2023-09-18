@@ -6,7 +6,7 @@ async function getUniversities(country: string): Promise<University[]> {
 }
 
 function renderUniversities(universities: University[], universitiesList: HTMLUListElement) {
-  universitiesList.innerHTML = ''; // Limpa a lista anterior
+  universitiesList.innerHTML = '';
 
   if (universities && universities.length > 0) {
     universities.slice(0, 50).forEach((university) => {
@@ -21,22 +21,21 @@ function renderUniversities(universities: University[], universitiesList: HTMLUL
       strong.className = 'text-center justify-center mt-10';
       strong.textContent = university.name;
 
-      // Elemento de texto para "Ir para o website"
       const websiteText = document.createElement('span');
       websiteText.className = 'absolute bottom-2 left-0 right-0 text-center text-green-500 opacity-0 transition-opacity text-[#4da371] font-bold text-lg';
       websiteText.textContent = 'Ir para o website';
 
       link.appendChild(strong);
-      link.appendChild(websiteText); // Adiciona o elemento de texto ao link
+      link.appendChild(websiteText); //Adiciona o elemento de texto ao link
       listItem.appendChild(link);
       universitiesList.appendChild(listItem);
 
-      // Evento de passar o mouse para mostrar o texto "Ir para o website"
+      //Evento de passar o mouse para mostrar o texto "Ir para o website"
       link.addEventListener('mouseover', () => {
         websiteText.style.opacity = '1';
       });
 
-      // Evento de retirar o mouse para esconder o texto
+      //Evento de retirar o mouse para esconder o texto
       link.addEventListener('mouseout', () => {
         websiteText.style.opacity = '0';
       });
