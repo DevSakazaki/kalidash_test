@@ -1,6 +1,6 @@
 'use client'
 
-import universitiess from './universities/page';
+import { universities } from './universities/page';
 import React, { FormEvent } from 'react';
 
 export default function HomePage() {
@@ -15,7 +15,7 @@ export default function HomePage() {
       // Mostrar tela de carregamento
       loadingElement.style.display = 'flex'; 
 
-      await universitiess(countryInput, universitiesList);
+      await universities(countryInput, universitiesList);
 
       // Esconder tela de carregamento após a pesquisa
       loadingElement.style.display = 'none';
