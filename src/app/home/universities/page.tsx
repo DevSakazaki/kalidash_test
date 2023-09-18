@@ -5,7 +5,7 @@ async function getUniversities(country: string): Promise<University[]> {
   return response.json();
 }
 
-export function renderUniversities(universities: University[], universitiesList: HTMLUListElement) {
+function renderUniversities(universities: University[], universitiesList: HTMLUListElement) {
   universitiesList.innerHTML = ''; // Limpa a lista anterior
 
   if (universities && universities.length > 0) {
