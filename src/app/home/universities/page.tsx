@@ -48,8 +48,11 @@ function renderUniversities(universities: University[], universitiesList: HTMLUL
   }
 }
 
-export default async function universities(countryInput: HTMLInputElement, universitiesList: HTMLUListElement) {
+async function universities(countryInput: HTMLInputElement, universitiesList: HTMLUListElement) {
   const country = countryInput.value;
   const universities = await getUniversities(country);
   renderUniversities(universities, universitiesList);
 }
+
+
+export default universities;
