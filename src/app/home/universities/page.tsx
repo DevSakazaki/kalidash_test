@@ -1,7 +1,6 @@
 import { University } from "@/app/util/models";
-import { v4 as uuidv4 } from 'uuid';
 
-export async function getUniversities(country: string): Promise<University[]> {
+export async function getUniversities(country: string) {
   const response = await fetch(`http://universities.hipolabs.com/search?country=${country}`);
   return response.json();
 }
